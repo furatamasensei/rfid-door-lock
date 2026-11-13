@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "author": "RFID Door Lock Lab",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "board-mfrc522",
+      "id": "rfid1",
+      "top": 0,
+      "left": 330,
+      "attrs": {
+        "uid": "01:02:03:04"
+      }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": 200,
+      "left": 330,
+      "attrs": {
+        "horn": "single"
+      }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 200,
+      "left": 470,
+      "attrs": {
+        "volume": "0.2"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledG",
+      "top": 200,
+      "left": 550,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledR",
+      "top": 200,
+      "left": 610,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rG",
+      "top": 300,
+      "left": 550,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rR",
+      "top": 300,
+      "left": 610,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "uno:3V3",
+      "rfid1:VCC",
+      "red",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "rfid1:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:9",
+      "rfid1:RST",
+      "purple",
+      []
+    ],
+    [
+      "uno:10",
+      "rfid1:SDA",
+      "green",
+      []
+    ],
+    [
+      "uno:13",
+      "rfid1:SCK",
+      "orange",
+      []
+    ],
+    [
+      "uno:11",
+      "rfid1:MOSI",
+      "yellow",
+      []
+    ],
+    [
+      "uno:12",
+      "rfid1:MISO",
+      "blue",
+      []
+    ],
+    [
+      "uno:5V",
+      "servo1:V+",
+      "red",
+      []
+    ],
+    [
+      "uno:GND.2",
+      "servo1:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:3",
+      "servo1:PWM",
+      "orange",
+      []
+    ],
+    [
+      "uno:GND.3",
+      "bz1:1",
+      "black",
+      []
+    ],
+    [
+      "uno:2",
+      "bz1:2",
+      "green",
+      []
+    ],
+    [
+      "uno:5",
+      "rG:1",
+      "green",
+      []
+    ],
+    [
+      "rG:2",
+      "ledG:A",
+      "green",
+      []
+    ],
+    [
+      "ledG:C",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "uno:6",
+      "rR:1",
+      "orange",
+      []
+    ],
+    [
+      "rR:2",
+      "ledR:A",
+      "orange",
+      []
+    ],
+    [
+      "ledR:C",
+      "uno:GND.1",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,14 @@
+# Arduino / build artifacts
+build/
+*.elf
+*.hex
+*.bin
+*.map
+
+# editor / OS
+.vscode/
+.DS_Store
+*.local
+
+# local logs
+*.log
